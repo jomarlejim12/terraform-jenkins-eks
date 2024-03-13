@@ -1,4 +1,4 @@
-variable "vpc_cidr" {
+variable "cidr_block" {
   type        = string
   description = "VPC CIDR"
 }
@@ -11,4 +11,9 @@ variable "private_subnets" {
 variable "public_subnets" {
   description = "Subnets CIDR"
   type        = list(string)
+}
+
+variable "cluster_name" {
+  description = "Cluster name"
+  type        = string
 }
