@@ -303,21 +303,21 @@ module "eks" {
 #  }
 #  }
 
- resource "aws_eks_access_entry" "access-cred-entry" {
-  cluster_name      = module.eks.cluster_name
-  principal_arn     = "arn:aws:iam::594599110225:user/jomarlAdmin"
-  type              = "STANDARD"
-}
+#  resource "aws_eks_access_entry" "access-cred-entry" {
+#   cluster_name      = module.eks.cluster_name
+#   principal_arn     = "arn:aws:iam::594599110225:user/jomarlAdmin"
+#   type              = "STANDARD"
+# }
 
-resource "aws_eks_access_policy_association" "access-cred-entry-policy" {
-  cluster_name  = module.eks.cluster_name
-  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
-  principal_arn = "arn:aws:iam::594599110225:user/jomarlAdmin"
+# resource "aws_eks_access_policy_association" "access-cred-entry-policy" {
+#   cluster_name  = module.eks.cluster_name
+#   policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
+#   principal_arn = "arn:aws:iam::594599110225:user/jomarlAdmin"
 
-  access_scope {
-    type       = "cluster"
-  }
-}
+#   access_scope {
+#     type       = "cluster"
+#   }
+# }
 
 # resource "null_resource" "install_efs_csi_driver" {
 #   depends_on = [module.eks.aws_eks_cluster]
